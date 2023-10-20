@@ -1,6 +1,6 @@
 # Личный проект «Кекстаграм»
 
-* Студент: [Темирлан Долов](https://up.htmlacademy.ru/javascript/30/user/2435951).
+* Студент: [Темирлан Долов](https://up.htmlacademy.ru/javascript/30/user/2435951) (check).
 * Наставник: `Артём Картавый`.
 
 ---
