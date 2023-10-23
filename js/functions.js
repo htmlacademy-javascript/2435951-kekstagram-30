@@ -1,25 +1,26 @@
-function isLessOrEqual(string, length) {
+function compareLength(string, length) {
   return string.length <= length;
 }
 
-isLessOrEqual('проверяемая строка', 20); // true
-isLessOrEqual('проверяемая строка', 18); // true
-isLessOrEqual('проверяемая строка', 10); // false
+compareLength('проверяемая строка', 20); // true
+compareLength('проверяемая строка', 18); // true
+compareLength('проверяемая строка', 10); // false
 
-function isPalindrome(value) {
+function checkReflectivity(value) {
   const string = value.replaceAll(' ', '').toLowerCase();
+  let reflexCond = true;
   for (let i = 0; i < string.length / 2; i++) {
-    if (string.at(i) !== string.at(- i - 1)) {
-      return false;
+    if (string.at(i) !== string.at(string.length - i - 1)) {
+      reflexCond = false;
     }
-    return true;
   }
+  return reflexCond;
 }
 
-isPalindrome('топот'); // true
-isPalindrome('ДовОд'); // true
-isPalindrome('Кекс'); // false
-isPalindrome('Лёша на полке клопа нашёл '); // true
+checkReflectivity('топот'); // true
+checkReflectivity('ДовОд'); // true
+checkReflectivity('Кекс'); // false
+checkReflectivity('Лёша на полке клопа нашёл '); // true
 
 
 function extractNumber(arg) {
