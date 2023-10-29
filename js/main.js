@@ -79,3 +79,5 @@ const getPictures = () => Array.from(
   (_, pictureIndex) => createPicture(pictureIndex + 1),
 );
 getPictures();
+console.log(getPictures());
+console.log(createComment());
