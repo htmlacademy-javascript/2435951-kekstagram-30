@@ -13,7 +13,7 @@ const COMMENTS = [
 ];
 
 const DESCRIPTION = [
-  'Если чётко сформулировать желание для Вселенной, то всё обязательно сбудется. Верьте в себя. Главное хотеть и мечтать..... / I\'ve bought some potatoes.',
+  'Если чётко сформулировать желание для Вселенной, то всё обязательно сбудется. Верьте в себя. Главное хотеть и мечтать.....',
   'Как же круто тут кормят #food #foodgram #instafood #delicious #yummy',
   '#fun #party #cool #young',
   'Тестим новую камеру! #camera #test #new #newcameratest #pic #photo #instaphoto',
