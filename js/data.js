@@ -2,9 +2,9 @@ import {getRandomInteger, getRandomArrayElement, createIdGenerator} from './util
 
 const PICTURE_COUNT = 25;
 const AVATAR_COUNT = 6;
-const LIKE_MIN_COUNT = 0;
-const LIKE_MAX_COUNT = 500;
-
+const LIKE_MIN_COUNT = 10;
+const LIKE_MAX_COUNT = 200;
+const COMMENTS_COUNT = 30;
 const COMMENTS = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
@@ -54,7 +54,7 @@ const createPicture = (index) => ({
   description: getRandomArrayElement(DESCRIPTION),
   likes: getRandomInteger(LIKE_MIN_COUNT, LIKE_MAX_COUNT),
   comments: Array.from(
-    {length: getRandomInteger(0, COMMENTS.length)},
+    {length: getRandomInteger(0, COMMENTS_COUNT)},
     createComment,
   ),
 });
