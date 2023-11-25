@@ -1,5 +1,8 @@
 import {getPictures} from './data.js';
-import {renderPictures} from './thumbnail.js';
+import {renderGallery} from './gallery.js';
+// import './popup.js';
+
 
 const pictures = getPictures();
-renderPictures(pictures);
+// renderPictures(pictures);
+renderGallery(pictures);
