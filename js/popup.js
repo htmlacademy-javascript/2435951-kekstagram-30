@@ -69,6 +69,14 @@ const showPicture = (pictureData) => {
 
   if (comments.length > 0) {
     renderComments();
+  } else if (comments.length === 0) {
+    const emptyCommentsList = document.createElement('li');
+    emptyCommentsList.classList.add('social__comment');
+    emptyCommentsList.textContent = 'Нет комментариев';
+    commentList.innerHTML = '';
+    commentList.append(emptyCommentsList);
+    commentCountContainer.classList.add('hidden');
+    commentsLoader.classList.add('hidden');
   }
 
   document.addEventListener('keydown', onDocumentKeydown);
