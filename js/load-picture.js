@@ -32,8 +32,12 @@ function hideLoadPopup() {
 const isCommentInputFocused = () =>
   document.activeElement === hashtagInput || document.activeElement === commentInput;
 
+function isErrorMessageExists() {
+  return Boolean(document.querySelector('.error'));
+}
+
 function onDocumentKeydown(e) {
-  if(e.key === 'Escape' && !isCommentInputFocused()) {
+  if(e.key === 'Escape' && !isCommentInputFocused() && !isErrorMessageExists()) {
     e.preventDefault();
     hideLoadPopup();
   }
@@ -54,3 +58,5 @@ function loadImage() {
 
 uploadInput.addEventListener('change', showLoadPopup);
 closeButton.addEventListener('click', hideLoadPopup);
+
+export { hideLoadPopup };
