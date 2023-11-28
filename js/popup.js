@@ -3,7 +3,7 @@ const SHOWN_COMMENTS_QUANTITY = 5;
 const picturePeviewContainer = document.querySelector('.big-picture');
 const popupContainer = document.querySelector('body');
 const popupClose = document.querySelector('.big-picture__cancel');
-const commentCountContainer = picturePeviewContainer.querySelector('.social__comment-count');
+
 const commentList = picturePeviewContainer.querySelector('.social__comments');
 const commentCount = picturePeviewContainer.querySelector('.social__comment-shown-count');
 const commentsTotalCounter = picturePeviewContainer.querySelector('.social__comment-total-count');
@@ -69,14 +69,6 @@ const showPicture = (pictureData) => {
 
   if (comments.length > 0) {
     renderComments();
-  } else if (comments.length === 0) {
-    const emptyCommentsList = document.createElement('li');
-    emptyCommentsList.classList.add('social__comment');
-    emptyCommentsList.textContent = 'Нет комментариев';
-    commentList.innerHTML = '';
-    commentList.append(emptyCommentsList);
-    commentCountContainer.classList.add('hidden');
-    commentsLoader.classList.add('hidden');
   }
 
   document.addEventListener('keydown', onDocumentKeydown);
