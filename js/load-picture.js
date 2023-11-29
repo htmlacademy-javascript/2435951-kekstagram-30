@@ -1,6 +1,6 @@
-import {resetScale} from './edit-scale.js';
-import {reset as resetEffect} from './pick-style.js';
-import {pristine} from './form.js';
+import { resetScale } from './edit-scale.js';
+import { reset as resetEffect } from './pick-style.js';
+import { pristine } from './form.js';
 
 const body = document.querySelector('body');
 const form = document.querySelector('.img-upload__form');
@@ -11,6 +11,7 @@ const imagePreveiw = document.querySelector('.img-upload__preview img');
 const imagePreviews = document.querySelectorAll('.effects__preview');
 const hashtagInput = document.querySelector('.text__hashtags');
 const commentInput = document.querySelector('.text__description');
+const FILE_TYPES = ['jpg', 'jpeg', 'png'];
 
 function showLoadPopup() {
   overlay.classList.remove('hidden');
@@ -27,6 +28,7 @@ function hideLoadPopup() {
   pristine.reset();
   form.reset();
   document.removeEventListener('keydown', onDocumentKeydown);
+
 }
 
 const isCommentInputFocused = () =>
@@ -43,17 +45,21 @@ function onDocumentKeydown(e) {
   }
 }
 
+function isValidType(file) {
+  const fileName = file.name.toLowerCase();
+  return FILE_TYPES.some((it) => fileName.endsWith(it));
+}
+
 function loadImage() {
   const file = uploadInput.files[0];
-  const reader = new FileReader();
-  reader.addEventListener('load', (e) => {
-    imagePreveiw.src = e.target.result;
+
+  if (file && isValidType(file)) {
+    imagePreveiw.src = URL.createObjectURL(file);
 
     imagePreviews.forEach((item) => {
-      item.style.backgroundImage = `url(${e.target.result})`;
+      item.style.backgroundImage = `url(${imagePreveiw.src})`;
     });
-  });
-  reader.readAsDataURL(file);
+  }
 }
 
 uploadInput.addEventListener('change', showLoadPopup);

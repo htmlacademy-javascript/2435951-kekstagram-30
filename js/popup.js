@@ -47,7 +47,6 @@ const renderComments = () => {
 
   commentCount.textContent = commentsCountShown;
   commentsTotalCounter.textContent = comments.length;
-
 };
 
 const onSubmitLoaderClick = () => renderComments();
@@ -103,4 +102,4 @@ const onClosePopup = () => {
 popupClose.addEventListener('click', onClosePopup);
 commentsLoader.addEventListener('click', onSubmitLoaderClick);
 
-export {showPicture};
+export { showPicture, renderComments };

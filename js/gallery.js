@@ -1,9 +1,9 @@
-import {renderPictures} from './thumbnail.js';
+import { renderPictures } from './thumbnail.js';
 import { showPicture } from './popup.js';
 
 const container = document.querySelector('.pictures');
 
-const renderGallery = (pictures) => {
+const onClickContainer = (pictures) => {
   container.addEventListener('click', (e) => {
     const picture = e.target.closest('[data-image-id]');
 
@@ -16,8 +16,15 @@ const renderGallery = (pictures) => {
     const pictureData = pictures.find(({id}) => id === imageId);
     showPicture(pictureData);
   });
-
-  renderPictures(pictures, container);
 };
 
-export {renderGallery};
+const loadPictures = (pictures, listContainer) => {
+  renderPictures(pictures, listContainer);
+};
+
+const renderGallery = (pictures) => {
+  onClickContainer(pictures);
+  loadPictures(pictures, container);
+};
+
+export { renderGallery, loadPictures };

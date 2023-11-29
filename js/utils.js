@@ -1,4 +1,4 @@
-const REMOVE_MESSAGE_TIMEOUT = 5000;
+const REMOVE_MESSAGE_TIMEOUT = 3000;
 
 const errorMessageTemplate = document
   .querySelector('#data-error')
@@ -14,4 +14,13 @@ function showErrorBanner() {
   }, REMOVE_MESSAGE_TIMEOUT);
 }
 
-export { showErrorBanner };
+function debounce (callback, timeoutDelay = 500) {
+  let timeoutId;
+
+  return (...rest) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+  };
+}
+
+export { showErrorBanner, debounce };

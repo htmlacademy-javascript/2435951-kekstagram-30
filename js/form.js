@@ -76,4 +76,4 @@ pristine.addValidator(hashtagInput, hasValidTags, errorNotice.INVALID_PATTERN, 2
 form.addEventListener('submit', onFormSubmit);
 initEffect();
 
-export {pristine};
+export { pristine };
