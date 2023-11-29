@@ -16,7 +16,7 @@ const FILE_TYPES = ['jpg', 'jpeg', 'png'];
 function showLoadPopup() {
   overlay.classList.remove('hidden');
   body.classList.add('modal-open');
-  loadImage();
+  uploadImage();
   document.addEventListener('keydown', onDocumentKeydown);
 }
 
@@ -50,12 +50,11 @@ function isValidType(file) {
   return FILE_TYPES.some((it) => fileName.endsWith(it));
 }
 
-function loadImage() {
+function uploadImage() {
   const file = uploadInput.files[0];
 
   if (file && isValidType(file)) {
     imagePreveiw.src = URL.createObjectURL(file);
-
     imagePreviews.forEach((item) => {
       item.style.backgroundImage = `url(${imagePreveiw.src})`;
     });
