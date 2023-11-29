@@ -22,4 +22,4 @@ const renderPictures = (pictures, container) => {
   container.append(fragment);
 };
 
-export {renderPictures};
+export { renderPictures };
