@@ -2,6 +2,7 @@ import { renderGallery } from './gallery.js';
 import { loadPictures } from './api.js';
 import { showErrorBanner } from './utils.js';
 import { initFilter } from './filter.js';
+import './load-picture.js';
 
 async function bootstrap() {
   try {
