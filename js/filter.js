@@ -1,13 +1,13 @@
 import { renderGallery, loadPictures } from './gallery.js';
 import { debounce } from './utils.js';
 
+const MAX_RANDOM_FILTER = 10;
+
 const filterElement = document.querySelector('.img-filters');
 const filterContainer = document.querySelector('.img-filters__form');
 const filterDefault = filterContainer.querySelector('#filter-default');
 const filterRandom = filterContainer.querySelector('#filter-random');
 const filterPopular = filterContainer.querySelector('#filter-discussed');
-
-const MAX_RANDOM_FILTER = 10;
 
 const filters = {
   DEFAULT: 'default',
